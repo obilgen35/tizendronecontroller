@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>Settings</title>
+    <link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.css">
+    <link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)" href="lib/tau/wearable/theme/default/tau.circle.css">
+    <link rel="stylesheet" href="lib/tau-custom.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!--Toast-->
+	<div id="toast" class="ui-popup ui-popup-toast">
+		<div id="toast-content" class="ui-popup-content"></div>
+	</div>
+
+    <div class="ui-page ui-page-active" id="main">
+        <header class="ui-header">
+            <h2 class="ui-title">Drone</h2>
+        </header>	
+        <div class="ui-content">
+            <ul class="ui-listview">
+                <li class="li-has-thumb-left">
+                    <a href="#settings_drone">
+                        Settings
+                        <div class="img-icon input-icon ui-li-thumb-left"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+		<footer class="ui-footer ui-bottom-button ui-fixed">
+		    <a href="#fly_drone">
+		    	<button class="ui-btn" id="fly-button">FLY</button>
+		    </a>
+        </footer>
+    </div>
+    
+    <div class="ui-page" id="fly_drone" style="background-color: rgba(0, 0, 255, 0.3);">
+		<div class="ui-content" > 
+			<p id="flightState" onclick="toggleFlight()"> Take Off </p>    		
+		</div>
+   		<footer class="ui-footer ui-bottom-button">
+      		<button class="ui-btn" id="fly-cancel-button" onclick="emergencyClick()">
+      			CANCEL
+      		</button>
+   		</footer>
+    </div>
+ 
+    <div class="ui-page" id="settings_drone">
+        <header class="ui-header">
+            <h2 class="ui-title">Settings</h2>
+        </header>
+        <div class="ui-content">
+            <ul class="ui-listview">
+                <li class="li-has-2line">
+     				<a href="#alt_drone">
+     					Max Altitude
+     					<span id="alt-value-secondline" class="li-text-sub ui-li-sub-text">0</span>
+     				</a>              
+                </li>  
+                <li class="li-has-2line">
+     				<a href="#vert_drone">
+     					Max Vertical Speed
+     					<span id="vertspeed-value-secondline" class="li-text-sub ui-li-sub-text">0</span>
+     				</a>              
+                </li> 
+                <li class="li-has-2line">
+     				<a href="#pitch_drone">
+     					Max Pitch and Roll
+     					<span id="pitch-value-secondline" class="li-text-sub ui-li-sub-text">0</span>
+     				</a>              
+                </li> 
+                <li class="li-has-2line">
+     				<a href="#rotate_drone">
+     					Max Rotation Speed
+     					<span id="rotate-value-secondline" class="li-text-sub ui-li-sub-text">0</span>
+     				</a>              
+                </li> 
+                <li class="li-has-2line">
+     				<a href="#tilt_drone">
+     					Max Tilt
+     					<span id="tilt-value-secondline" class="li-text-sub ui-li-sub-text">0</span>
+     				</a>              
+                </li>               
+            </ul>
+        </div>
+    </div>
+    
+    <!-- <div class="ui-page" id="alt_drone2" data-enable-page-scroll="false">
+        <header class="ui-header">
+            <div class="brightness-navigation">
+                <div id="brightness-minus" class="brightness-minus ui-btn brightness-btn"></div>
+                <div id="brightness-value" class="brightness-value">&nbsp;</div>
+                <div id="brightness-plus" class="brightness-plus ui-btn brightness-btn"></div>
+            </div>
+        </header>
+ 
+        <div class="ui-content">
+            <div id="brightness-icon" class="brightness-icon"></div>
+            <input id="circle" data-type="circle" name="circleSlider" type="range" value="0" min="0" max="9"/>
+        </div>
+ 
+        <footer class="ui-footer ui-bottom-button ui-fixed">
+            <p>Brightness</p>
+        </footer>
+    </div>  -->
+    
+    
+    <div class="ui-page" id="alt_drone">
+        <header class="ui-header">
+            <div class="brightness-navigation">
+                <div id="brightness-minus" class="brightness-minus ui-btn brightness-btn"></div>
+                <div id="brightness-plus" class="brightness-plus ui-btn brightness-btn"></div>
+            </div>
+        </header>
+        <div class="ui-content">
+            <ul class="ui-listview">
+            	<li>
+            		<a id="altitude-value" class="brightness-value">0</a>
+            	</li>
+            </ul>         
+        </div>
+        <footer class="ui-footer ui-bottom-button">
+      		<button class="ui-btn" id="altitudebutton" >
+      			Altitude
+      		</button>
+   		</footer>
+    </div>
+        
+    <div class="ui-page" id="vert_drone">
+		<header class="ui-header">
+            <div class="brightness-navigation">
+                <div id="brightness-minus" class="brightness-minus ui-btn brightness-btn"></div>
+                <div id="brightness-plus" class="brightness-plus ui-btn brightness-btn"></div>
+            </div>
+        </header>
+        <div class="ui-content">
+            <ul class="ui-listview">
+            	<li>
+            		<a id="vertspeed-value" class="brightness-value">0</a>
+            	</li>
+            </ul>
+            
+        </div>
+        <footer class="ui-footer ui-bottom-button">
+      		<button class="ui-btn" id="vertspeedbutton" >
+      			Vert Speed
+      		</button>
+   		</footer>
+    </div>
+    
+    <div class="ui-page" id="pitch_drone">
+		<header class="ui-header">
+            <div class="brightness-navigation">
+                <div id="brightness-minus" class="brightness-minus ui-btn brightness-btn"></div>
+                <div id="brightness-plus" class="brightness-plus ui-btn brightness-btn"></div>
+            </div>
+        </header>
+        <div class="ui-content">
+            <ul class="ui-listview">
+            	<li>
+            		<a id="pitch-value" class="brightness-value">0</a>
+            	</li>
+            </ul>
+            
+        </div>
+        <footer class="ui-footer ui-bottom-button">
+      		<button class="ui-btn" id="pitchbutton" >
+      			Pitch Roll
+      		</button>
+   		</footer>
+    </div>
+    
+    <div class="ui-page" id="rotate_drone">
+		<header class="ui-header">
+            <div class="brightness-navigation">
+                <div id="brightness-minus" class="brightness-minus ui-btn brightness-btn"></div>
+                <div id="brightness-plus" class="brightness-plus ui-btn brightness-btn"></div>
+            </div>
+        </header>
+        <div class="ui-content">
+            <ul class="ui-listview">
+            	<li>
+            		<a id="rotate-value" class="brightness-value">0</a>
+            	</li>
+            </ul>
+            
+        </div>
+        <footer class="ui-footer ui-bottom-button">
+      		<button class="ui-btn" id="rotatebutton" >
+      			Rotation
+      		</button>
+   		</footer>
+    </div>
+
+    <div class="ui-page" id="tilt_drone">
+		<header class="ui-header">
+            <div class="brightness-navigation">
+                <div id="brightness-minus" class="brightness-minus ui-btn brightness-btn"></div>
+                <div id="brightness-plus" class="brightness-plus ui-btn brightness-btn"></div>
+            </div>
+        </header>
+        <div class="ui-content">
+            <ul class="ui-listview">
+            	<li>
+            		<a id="tilt-value" class="brightness-value">0</a>
+            	</li>
+            </ul>
+            
+        </div>
+        <footer class="ui-footer ui-bottom-button">
+      		<button class="ui-btn" id="tiltbutton" >
+      			Tilt
+      		</button>
+   		</footer>
+    </div>
+
+ 
+    <script src="js/tauConfig.js"></script>
+    <script type="text/javascript" src="lib/tau/wearable/js/tau.js"></script>
+    <script type="text/javascript" src="lib/circle-helper.js"></script>
+    <!-- <script src="js/core/core.js" data-main="js/applib.js"></script> -->
+    <script src="js/app.js"> </script>
+
+</body>
+</html>

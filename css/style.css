@@ -1,0 +1,810 @@
+/*-------list element thumbnail-------*/
+ 
+.ui-li-thumb-left {
+    border-radius: 50%;
+}
+ 
+.ui-listview li.li-has-thumb-left .img-icon {
+    left: 30px;
+}
+ 
+.ui-listview li .img-icon {
+    position: absolute;
+    top: 50%;
+    width: 76px;
+    height: 76px;
+    margin: 0;
+    padding: 0;
+    -webkit-transform: translate3d(0, -50%, 0);
+    background-color: rgba(245, 245, 245, 1);
+}
+ 
+.ui-listview li .img-icon:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-size: 100% 100%;
+    background-color: rgb(0, 0, 0);
+    -webkit-mask-repeat: no-repeat;
+}
+ 
+.display-icon:before {
+    -webkit-mask-image: url(../images/b_settings_list_display.png);
+}
+ 
+.sound-icon:before {
+    -webkit-mask-image: url(../images/b_settings_list_sound.png);
+}
+ 
+.device-icon:before {
+    -webkit-mask-image: url(../images/b_settings_list_device.png);
+}
+ 
+.call-icon:before {
+    -webkit-mask-image: url(../images/b_settings_list_call.png);
+}
+ 
+.messages-icon:before {
+    -webkit-mask-image: url(../images/b_settings_list_messages.png);
+}
+ 
+.vibration-icon:before {
+    -webkit-mask-image: url(../images/b_settings_list_vibration.png);
+}
+ 
+.connections-icon:before {
+    -webkit-mask-image: url(../images/b_settings_list_connections.png);
+}
+ 
+.screen-lock-icon:before {
+    -webkit-mask-image: url(../images/b_settings_list_security.png);
+}
+ 
+.accessibility-icon:before {
+    -webkit-mask-image: url(../images/b_settings_list_accessibility.png);
+}
+ 
+.input-icon:before {
+    -webkit-mask-image: url(../images/b_settings_list_input.png);
+}
+ 
+.power-saving-icon:before {
+    -webkit-mask-image: url(../images/b_settings_list_power_saving.png);
+}
+ 
+.gear-info-icon:before {
+    -webkit-mask-image: url(../images/b_settings_list_gear_info.png);
+}
+ 
+/*-------list element toggle switch-------*/
+ 
+.ui-custom-toggleswitch {
+    width: 70px;
+    height: 70px;
+}
+ 
+.ui-listview.ui-snap-listview li.li-has-toggle > .ui-custom-toggleswitch-label {
+    padding-left: 14px;
+    padding-right: 114px;
+}
+ 
+.ui-li-cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+ 
+/*-------list element subtext customization-------*/
+ 
+.ui-listview li.li-has-2line .ui-li-sub-text {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 0;
+    -webkit-transition: all ease 1s;
+    position: relative;
+    top: -15px;
+}
+ 
+.ui-listview li.li-has-2line.ui-snap-listview-selected .ui-li-sub-text {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+    -webkit-transition: all ease 1s;
+}
+ 
+.ui-listview li .li-text-sub.li-text-sub-2-lines {
+    position: relative;
+    top: -21px;
+    left: 12px;
+    height: 64px;
+    white-space: normal;
+    line-height: 21px;
+    font-size: 1.4rem;
+}
+ 
+/*-------page indicator circle-------*/
+ 
+.ui-indicator-circle-page .ui-content section {
+    overflow: hidden;
+    overflow-y: auto;
+    text-align: center;
+}
+ 
+.ui-indicator-circle-page .ui-content section h3 {
+    margin-top: 140px;
+}
+ 
+.ui-section-changer section {
+    padding: 0;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+ 
+.ui-section-changer section .ui-section-remove {
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+ 
+.ui-section-changer section .ui-section-remove:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-size: 100% 100%;
+    background-color: #a22837;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-image: url(../images/minus.png);
+}
+ 
+.ui-section-changer .ui-section-current .ui-section-remove {
+    display: none;
+}
+ 
+.ui-section-thumbnail {
+    height: 224px;
+    width: 224px;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 50%;
+    position: relative;
+    text-align: center;
+    line-height: 200px;
+    transform: scale(1) translate3d(0, -50%, 0);
+    transition: transform 300ms;
+    z-index: -1;
+}
+ 
+.ui-section-current .ui-section-thumbnail {
+    border: 2px solid #0095FF;
+    box-shadow: 0px 0px 20px #0095FF;
+    transform: scale(1) translate3d(0, -50%, 0);
+}
+ 
+.ui-section-thumbnail.face-1 {
+    background-image: url('../images/face_1.png');
+}
+ 
+.ui-section-thumbnail.face-2 {
+    background-image: url('../images/face_2.png');
+}
+ 
+.ui-section-thumbnail.face-3 {
+    background-image: url('../images/face_3.png');
+}
+ 
+/*-------watch faces page-------*/
+ 
+#faces {
+    background-color: #1e1d1e;
+}
+ 
+#faces .ui-footer.ui-bottom-button .ui-btn {
+    left: 50%;
+    width: 100%;
+    height: 130%;
+    position: relative;
+    margin: 0;
+    padding: 8% 22% 16%;
+    background: -webkit-radial-gradient(center, circle cover, rgba(100, 100, 100, 0.3) 50%, transparent 50%);
+    background-size: 300% 840%;
+    background-position: 50% 17%;
+    background-repeat: no-repeat;
+    -webkit-transition: transform 150ms ease-out;
+}
+ 
+.h-section-name {
+    position: absolute;
+    top: 32px;
+    left: 100px;
+    right: 100px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: .9em;
+}
+ 
+.remove-face-thumbnail {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+ 
+#remove-face-popup .ui-popup-wrapper {
+    overflow-y: hidden !important;
+}
+ 
+/*-------common-------*/
+ 
+.hidden {
+    display: none;
+}
+ 
+.invisible {
+    visibility: hidden;
+}
+ 
+.btn-apply:before {
+    -webkit-mask-image: url(../images/tw_ic_popup_btn_check.png);
+    background-color: #fff;
+}
+ 
+.btn-erase:before {
+    -webkit-mask-image: url(../images/tw_ic_popup_btn_delete.png);
+    background-color: #fff;
+}
+ 
+.btn-cancel:before {
+    -webkit-mask-image: url(../images/tw_ic_popup_btn_delete.png);
+    background-color: #fff;
+}
+ 
+.btn-apply, .btn-erase, .btn-cancel {
+    color: transparent;
+}
+ 
+/*-------brightness page-------*/
+ 
+#brightness .ui-footer {
+    display: -webkit-flex;
+}
+ 
+#brightness .ui-footer p {
+    margin: 20px auto;
+    font-size: .9em;
+}
+ 
+.brightness-btn {
+    width: 98px;
+    height: 98px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 46%;
+    border-radius: 50%;
+    background-color: rgba(0, 8, 8, 1);
+}
+ 
+.brightness-btn:active {
+    background-color: #222;
+}
+ 
+.brightness-minus {
+    background-image: url('../images/minus.png');
+}
+ 
+.brightness-plus {
+    background-image: url('../images/plus.png');
+}
+ 
+.brightness-value {
+    width: 20px;
+    height: 100px;
+    float: left;
+    font-size: 1.2em;
+    color: #fff;
+    line-height: 100px;
+    text-align: center;
+}
+ 
+.ui-progressbar .ui-progressbar-bg,
+.ui-progressbar .ui-progressbar-value .ui-progressbar-value-left,
+.ui-progressbar .ui-progressbar-value .ui-progressbar-value-right {
+    border-width: 0.45rem;
+}
+ 
+.brightness-navigation {
+    position: absolute;
+    width: 216px;
+    height: 100px;
+    left: 50%;
+    margin-left: -108px;
+    bottom: -7px;
+}
+ 
+.brightness-icon {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    margin-top: -75px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    border-radius: 50%;
+}
+ 
+.brightness-icon:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-size: 100% 100%;
+    background-color: rgba(0, 8, 8, 1);
+    -webkit-mask-repeat: no-repeat;
+}
+ 
+.brightness-level-icon-0:before {
+    -webkit-mask-image: url(../images/brightness/b_settings_brightness_0.png);
+}
+ 
+.brightness-level-icon-1:before {
+    -webkit-mask-image: url(../images/brightness/b_settings_brightness_1.png);
+}
+ 
+.brightness-level-icon-2:before {
+    -webkit-mask-image: url(../images/brightness/b_settings_brightness_2.png);
+}
+ 
+.brightness-level-icon-3:before {
+    -webkit-mask-image: url(../images/brightness/b_settings_brightness_3.png);
+}
+ 
+.brightness-level-icon-4:before {
+    -webkit-mask-image: url(../images/brightness/b_settings_brightness_4.png);
+}
+ 
+.brightness-level-icon-5:before {
+    -webkit-mask-image: url(../images/brightness/b_settings_brightness_5.png);
+}
+ 
+.brightness-level-icon-6:before {
+    -webkit-mask-image: url(../images/brightness/b_settings_brightness_6.png);
+}
+ 
+.brightness-level-icon-7:before {
+    -webkit-mask-image: url(../images/brightness/b_settings_brightness_7.png);
+}
+ 
+.brightness-level-icon-8:before {
+    -webkit-mask-image: url(../images/brightness/b_settings_brightness_8.png);
+}
+ 
+.brightness-level-icon-9:before {
+    -webkit-mask-image: url(../images/brightness/b_settings_brightness_9.png);
+}
+ 
+/*-------gear info page-------*/
+ 
+#open-source-licenses-popup .ui-popup-content {
+    overflow-x: hidden;
+}
+ 
+/*-------volume page-------*/
+ 
+#volume-page-indicator {
+    top: 0;
+}
+ 
+#volume .ui-content {
+    margin: 0;
+    padding: 0;
+}
+ 
+#volume-section-changer {
+    height: 360px !important;
+}
+ 
+#volume .volume-icon {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    margin-top: -75px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    border-radius: 50%;
+}
+ 
+#volume .volume-icon:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-size: 100% 100%;
+    background-color: rgba(8, 8, 8, 1);
+    -webkit-mask-repeat: no-repeat;
+}
+ 
+#volume .volume-icon-ringtone:before {
+    -webkit-mask-image: url(../images/volume/b_setting_multi_media.png);
+}
+ 
+#volume .volume-icon-ringtone.mute:before {
+    -webkit-mask-image: url(../images/volume/b_setting_multi_media_mute.png);
+}
+ 
+#volume .volume-icon-multimedia:before {
+    -webkit-mask-image: url(../images/volume/b_setting_multi_media.png);
+}
+ 
+#volume .volume-icon-multimedia.mute:before {
+    -webkit-mask-image: url(../images/volume/b_setting_multi_media_mute.png);
+}
+ 
+#volume .volume-icon-notification:before {
+    -webkit-mask-image: url(../images/volume/b_setting_multi_notification.png);
+}
+ 
+#volume .volume-icon-notification.mute:before {
+    -webkit-mask-image: url(../images/volume/b_setting_multi_notification_mute.png);
+}
+ 
+#volume .volume-icon-system:before {
+    -webkit-mask-image: url(../images/volume/b_setting_multi_system.png);
+}
+ 
+#volume .volume-icon-system.mute:before {
+    -webkit-mask-image: url(../images/volume/b_setting_multi_system_mute.png);
+}
+ 
+#volume .volume-label {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 12%;
+    left: 0;
+    font-size: .9em;
+}
+ 
+#volume .volume-value {
+    position: absolute;
+    font-size: 1.2em;
+    top: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+ 
+#volume .volume-btn {
+    width: 98px;
+    height: 98px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 46%;
+    border-radius: 50%;
+    background-color: rgba(8, 8, 8, 1);
+    position: absolute;
+    top: 22px;
+}
+ 
+#volume .volume-btn:active {
+    background-color: #222;
+}
+ 
+#volume .volume-btn.volume-btn-minus {
+    background-image: url('../images/minus.png');
+    left: 18%;
+}
+ 
+#volume .volume-btn.volume-btn-plus {
+    background-image: url('../images/plus.png');
+    right: 18%;
+}
+ 
+/*-------input page-------*/
+ 
+.ui-listview.ui-snap-listview .li-has-2line.disabled .ui-li-sub-text {
+    color: #fff;
+}
+ 
+/*-------nfc page-------*/
+ 
+#tap-and-pay-icon {
+    width: 100%;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url('../images/b_settings_payment_help_image.png');
+}
+ 
+/*-------date and time page-------*/
+ 
+#date-popup .picker-layer, #time-popup .picker-layer {
+    width: 100%;
+    height: 360px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+ 
+#date-popup .hand-layer, #time-popup .hand-layer {
+    -webkit-transition: all 0.3s ease-out;
+}
+ 
+#date-popup canvas, #time-popup canvas {
+    width: 100%;
+    height: 100%;
+}
+ 
+#date-popup .ui-popup-content, #time-popup .ui-popup-content {
+    position: relative;
+    padding-top: 0;
+}
+ 
+#date-popup .date-container, #time-popup .time-container {
+    position: absolute;
+    text-align: center;
+}
+ 
+#date-popup .ui-popup-wrapper, #time-popup .ui-popup-wrapper {
+    overflow: hidden !important;
+}
+#date-popup .date-month-container {
+    width: 25%;
+}
+ 
+#date-popup .date-day-container {
+    left: 34%;
+    width: 24%;
+}
+ 
+#date-popup .date-year-container {
+    left: 59%;
+    width: 34%;
+}
+ 
+#time-popup .time-hour-container {
+    width: 25%;
+    left: 20%;
+}
+ 
+#time-popup .time-separator-container {
+    left: 45%;
+    width: 7%;
+    top: -4px;
+}
+ 
+#time-popup .time-minute-container {
+    left: 52%;
+    width: 25%;
+}
+ 
+#date-popup .date-label, #time-popup .time-label {
+    font-size: 1.5rem;
+}
+ 
+#date-popup .date-value {
+    font-size: 3rem;
+    padding-top: 6px;
+}
+ 
+#time-popup .time-value {
+    font-size: 4rem;
+    padding-top: 6px;
+}
+ 
+@-webkit-keyframes date-part-blink {
+    0% {
+        color: rgba(18, 180, 255, 1);
+    }
+ 
+    50% {
+        color: #fff;
+    }
+ 
+    100% {
+        color: rgba(18, 180, 255, 1);
+    }
+}
+ 
+#date-popup .date-container.active .date-value,
+#time-popup .time-container.active .time-value {
+    color: rgba(18, 180, 255, 1);
+    -webkit-animation: date-part-blink 1s steps(1, end) infinite;
+}
+ 
+/*-------call - call forwarding - more - number settings-------*/
+#call-forwarding-more-number-settings {
+    position: relative;
+}
+ 
+.circular-dial,
+.circular-dial ol,
+.circular-dial canvas,
+.circular-dial .clickable-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    counter-reset: numbers -1;
+}
+ 
+.circular-dial {
+    background: #062c3d;
+}
+ 
+.circular-dial ol:before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 240px;
+    width: 240px;
+    margin-top: -120px;
+    margin-left: -120px;
+    content: "";
+    display: block;
+    background: #00040a;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #00040a;
+}
+ 
+.circular-dial li {
+    position: absolute;
+    color: #fff;
+    font-size: 36px;
+    line-height: 36px;
+    counter-increment: numbers 1;
+ 
+}
+ 
+.circular-dial li:before {
+    content: counter(numbers);
+}
+ 
+.circular-dial .d0 {
+    top: 13px;
+    left: 171px;
+}
+ 
+.circular-dial .d1 {
+    top: 43px;
+    left: 260px;
+}
+ 
+.circular-dial .d2, .circular-dial .d8 {
+    top: 109px;
+    left: 309px;
+}
+ 
+.circular-dial .d3, .circular-dial .d7 {
+    top: 201px;
+    left: 300px;
+}
+ 
+.circular-dial .d4, .circular-dial .d6 {
+    top: 273px;
+    left: 255px;
+}
+ 
+.circular-dial .d5 {
+    top: 306px;
+    left: 165px;
+}
+ 
+.circular-dial .d6 {
+    left: 76px;
+}
+ 
+.circular-dial .d7 {
+    left: 20px;
+}
+ 
+.circular-dial .d8 {
+    left: 24px;
+}
+ 
+.circular-dial .d9 {
+    left: 74px;
+    top: 30px;
+}
+ 
+.circular-dial li span {
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    margin-top: -3px;
+}
+ 
+#call-gear-number {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 32px;
+    font-size: 28px;
+    margin-top: -16px
+}
+ 
+.circular-dial .confirm-button {
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    top: 75px;
+    left: 180px;
+    margin-left: -37px;
+    background: url("../lib/tau/wearable/theme/default/images/Controller_icon/tw_btn_check_holo_dark.png") 50% 50% no-repeat;
+    background-size: 100% 100%;
+}
+ 
+.circular-dial .delete-button {
+    background: url("../images/SIP_pin_lock/b_setting_btn_cancel.png") no-repeat;
+    background-size: 100%;
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    top: 236px;
+    left: 180px;
+    margin-left: -28px;
+}
+ 
+.dial-indicator, .circular-dial .delete-button:before {
+    background: rgba(255, 255, 255, .2);
+    width: 96px;
+    height: 96px;
+    margin-left: -48px;
+    margin-top: -48px;
+    transform: scale(0);
+    position: absolute;
+    border-radius: 50%;
+    opacity: .3;
+}
+ 
+.circular-dial .delete-button:before {
+    content: "";
+    margin-top: -12px;
+}
+ 
+.dial-indicator.active,
+.circular-dial .delete-button.active:before {
+    -webkit-animation: tap-indicator .3s linear;
+}
+ 
+@-webkit-keyframes tap-indicator {
+    0%, 100% {
+        opacity: .3;
+        -webkit-transform: scale(0);
+    }
+    30%, 60% {
+        opacity: 1;
+    }
+    95% {
+        -webkit-transform: scale(1.3);
+    }
+}
